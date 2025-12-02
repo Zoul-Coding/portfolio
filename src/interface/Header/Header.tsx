@@ -51,7 +51,7 @@ const Header = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-screen-xl mx-auto flex justify-between items-center xl:px-0 px-5 py-4">
+      <div className="max-w-screen-lg mx-auto flex justify-between items-center xl:px-0 px-5 py-4">
         <Link to="/" className="flex items-center gap-4">
            <img className="w-10 h-auto" src={Logo} alt="Logo" />
             <h2 className="text-2xl font-bold text-gray-300">zoul</h2>
