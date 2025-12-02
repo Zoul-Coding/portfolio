@@ -30,7 +30,7 @@
 
 @layer base {
   body {
-    background-color: hsl(var(--background));
+    background-color: #030712;
     color: hsl(var(--foreground));
   }
 }

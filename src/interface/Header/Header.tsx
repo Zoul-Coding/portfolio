@@ -1,10 +1,8 @@
-import { useState, useEffect } from 'react';
-import {
-  Dialog,
-  DialogContent,
-} from "@/components/ui/dialog"
-import { AlignJustify } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { AlignJustify } from "lucide-react";
+import { Link } from "react-router-dom";
+import Logo from '/img/logo.svg';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,22 +37,33 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Skills', path: '#' },
-    { name: 'Projects', path: '#' },
-    { name: 'Blog', path: '#' },
-    { name: 'Contact', path: '#' },
+    { name: "Skills", path: "#" },
+    { name: "Projects", path: "#" },
+    { name: "Blog", path: "#" },
+    { name: "Contact", path: "#" },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? "backdrop-blur-md bg-background/30 shadow-md" : "bg-transparent"}`}>
-      <div className="max-w-screen-lg mx-auto flex justify-between items-center xl:px-0 px-5 py-4">
-        <Link to='/' className="flex items-center gap-4">
-          <p className='text-2xl font-bold text-gray-300'>zoul</p>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "backdrop-blur-md bg-background/50 shadow-md"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-screen-xl mx-auto flex justify-between items-center xl:px-0 px-5 py-4">
+        <Link to="/" className="flex items-center gap-4">
+           <img className="w-10 h-auto" src={Logo} alt="Logo" />
+            <h2 className="text-2xl font-bold text-gray-300">zoul</h2>
         </Link>
         <div className="hidden md:block">
-          <nav className='flex md:block space-x-6'>
+          <nav className="flex md:block space-x-6">
             {navLinks.map((link, index) => (
-              <a key={index} href={link.path} className="hover:text-gray-300 text-gray-300">
+              <a
+                key={index}
+                href={link.path}
+                className="hover:text-gray-300 text-gray-300"
+              >
                 {link.name}
               </a>
             ))}
@@ -62,16 +71,28 @@ const Header = () => {
         </div>
         <div className="md:hidden">
           <Dialog open={isOpen} onOpenChange={closeDialog}>
-            <div className=''>
-              <AlignJustify size={22} onClick={openDialog} className='text-gray-300 cursor-pointer' />
+            <div className="">
+              <AlignJustify
+                size={22}
+                onClick={openDialog}
+                className="text-gray-300 cursor-pointer"
+              />
             </div>
-            <DialogContent className={`fixed left-0 right-0 py-10 top-[115px] border border-t-0 border-r-0 
+            <DialogContent
+              className={`fixed left-0 right-0 py-10 top-[115px] border border-t-0 border-r-0 
             border-l-0 border-b-border w-full bg-background
              transform transition-transform duration-500 ease-in-out 
-            ${isOpen ? '-translate-x-0 opacity-100' : 'translate-x-0 opacity-0'}`}>
-              <nav className='flex flex-col space-y-6'>
+            ${
+              isOpen ? "-translate-x-0 opacity-100" : "translate-x-0 opacity-0"
+            }`}
+            >
+              <nav className="flex flex-col space-y-6">
                 {navLinks.map((link, index) => (
-                  <a key={index} href={link.path} className="hover:text-gray-300 text-gray-300 text-sm">
+                  <a
+                    key={index}
+                    href={link.path}
+                    className="hover:text-gray-300 text-gray-300 text-sm"
+                  >
                     {link.name}
                   </a>
                 ))}
@@ -82,6 +103,6 @@ const Header = () => {
       </div>
     </nav>
   );
-}
+};
 
 export default Header;
