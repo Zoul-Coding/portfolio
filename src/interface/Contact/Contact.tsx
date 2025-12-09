@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const Contact = () => {
   return (
-    <section className="max-w-screen-md mx-auto xl:px-0 px-5 pt-16 pb-16">
+    <section className="max-w-screen-lg mx-auto xl:px-0 px-5 pt-16 pb-16">
       <div className="flex justify-between items-center flex-col gap-10">
         {/* ---- Right Side ---- */}
         <div className="w-full">

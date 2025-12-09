@@ -8,7 +8,7 @@ import TypeScriptImg from '/img/typescript.svg';
 
 const Skills = () => {
     return (
-        <div className="max-w-screen-lg mx-auto xl:px-0 px-5 pt-16 pb-16">
+        <div className="max-w-screen-xl mx-auto xl:px-0 px-5 pt-16 pb-16">
             <div className="">
                 <h3 className="md:text-3xl text-2xl text-center font-bold">Skills</h3>
                 <p className="text-muted-foreground text-center font-normal md:text-2xl text-1xl leading-[28px] pt-2">
