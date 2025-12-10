@@ -1,5 +1,4 @@
 import { CardSpotlight } from "@/components/ui/card-spotlight";
-import { LucideLinkedin, LucideGithub, Mail } from "lucide-react";
 import Profile from "/img/profile.jpg";
 import { Button } from "@/components/ui/button";
 
