@@ -60,7 +60,7 @@ export function HeroSection() {
               </Button>
 
               <Button className="px-12 py-6 rounded-xl bg-gray-800 text-yellow-200 font-semibold hover:opacity-80 hover:bg-gray-800 transition">
-                Contact Me
+                Télécharger mon cv
               </Button>
             </div>
           </div>

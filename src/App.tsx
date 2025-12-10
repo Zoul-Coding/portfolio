@@ -6,6 +6,7 @@ import Projects from "./interface/Projects/Projects";
 import Skills from "./interface/Skills/Skills";
 import Contact from "./interface/Contact/Contact";
 import ProjectDetail from "./interface/Projects/ProjectDetail";
+import Footer from "./interface/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Page d'accueil avec toutes les sections
@@ -17,6 +18,7 @@ const HomePage = () => {
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
     </>
   );
 };

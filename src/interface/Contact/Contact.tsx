@@ -1,113 +1,201 @@
-import { LucideLinkedin, LucideGithub, Mail } from 'lucide-react';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import { toast } from 'sonner';
+import emailjs from '@emailjs/browser';
+
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+
+
+// ⚠️ REMPLACEZ CES VALEURS PAR VOS VRAIES CLÉS
+const EMAILJS_PUBLIC_KEY = "KgiDNb_6HnwE9J6A9";
+console.log("Public Key:", EMAILJS_PUBLIC_KEY);
+const EMAILJS_SERVICE_ID = "service_waze5gw";
+const EMAILJS_TEMPLATE_ID = "template_24fbfqg";
+
+// Schéma de validation Zod
+const contactFormSchema = z.object({
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  surname: z.string().min(2, {
+    message: "Surname must be at least 2 characters.",
+  }),
+  subject: z.string().min(5, {
+    message: "Subject must be at least 5 characters.",
+  }),
+  message: z.string().min(10, {
+    message: "Message must be at least 10 characters.",
+  }).max(500, {
+    message: "Message must not exceed 500 characters.",
+  }),
+});
+
+type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 const Contact = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: "",
+      surname: "",
+      subject: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = async (data: ContactFormValues) => {
+    setIsLoading(true);
+
+    try {
+      // Initialiser EmailJS
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+
+      // Envoyer l'email
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: `${data.name} ${data.surname}`,
+          subject: data.subject,
+          message: data.message,
+        }
+      );
+
+      console.log('SUCCESS!', response.status, response.text);
+
+      // Toast de succès
+      toast.success('Message sent successfully! 🎉', {
+        description: "I'll get back to you as soon as possible.",
+      });
+
+      // Réinitialiser le formulaire
+      form.reset();
+
+    } catch (error) {
+      console.error('FAILED...', error);
+      
+      // Toast d'erreur
+      toast.error('Failed to send message', {
+        description: 'Please try again later or contact me directly via email.',
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section className="max-w-screen-lg mx-auto xl:px-0 px-5 pt-16 pb-16">
       <div className="flex justify-between items-center flex-col gap-10">
-        {/* ---- Right Side ---- */}
         <div className="w-full">
-          {/* Header */}
           <div>
             <h3 className="md:text-3xl text-2xl text-center font-bold">Contact Us</h3>
-            <p className="text-muted-foreground max-w-xl mx-auto font-normal text-2xl text-center leading-[28px] pt-4">
-              I'm currently specializing in{" "}
-              <span className="text-yellow-200">Front-end Development.</span>{" "}
-              Feel free to get in touch and talk more about your projects.
-            </p>
-          </div>
-
-          {/* Social Buttons */}
-          <div className="flex md:justify-center justify-center space-x-4 pt-4">
-            <a
-              href="https://www.linkedin.com/in/zoulkifirou-sabi-adam-73ab0b296"
-              target="_blank"
-              className="bg-secondary hover:bg-gray-700 flex items-center justify-center gap-2 w-32 h-10 rounded-[8px]"
-            >
-              <LucideLinkedin className="text-yellow-200" size={16} />
-              <p className="text-md font-bold">Linkedin</p>
-            </a>
-            <a
-              href="https://github.com/Zoul-Coding"
-              target="_blank"
-              className="bg-secondary hover:bg-gray-700 flex items-center justify-center gap-2 w-28 h-10 rounded-[8px]"
-            >
-              <LucideGithub className="text-yellow-200" size={16} />
-              <p className="text-md font-bold">Github</p>
-            </a>
-            <a
-              href="https://github.com/Zoul-Coding"
-              target="_blank"
-              className="bg-secondary hover:bg-gray-700 flex items-center justify-center gap-2 w-28 h-10 rounded-[8px]"
-            >
-              <Mail className="text-yellow-200" size={16} />
-              <p className="text-md font-bold">Gmail</p>
-            </a>
           </div>
         </div>
 
-        {/* ---- Left Side Block ---- */}
         {/* ---- Contact Form ---- */}
-        <form className="pt-6 space-y-5 w-full">
-          {/* Name */}
-          <div className="flex flex-col space-y-2">
-            <Label htmlFor="name" className="text-white">
-              Name
-            </Label>
-            <Input
-              id="name"
-              placeholder="Your name"
-              className="bg-secondary rounded py-6"
+        <Form {...form}>
+          <div onSubmit={form.handleSubmit(onSubmit)} className="pt-6 space-y-5 w-full">
+            {/* Name Field */}
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-white">Name</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Your name"
+                      className="bg-secondary rounded py-6"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          {/* Surname */}
-          <div className="flex flex-col space-y-2">
-            <Label htmlFor="surname" className="text-white">
-              Surname
-            </Label>
-            <Input
-              id="surname"
-              placeholder="Your surname"
-              className="bg-secondary rounded py-6"
+            {/* Surname Field */}
+            <FormField
+              control={form.control}
+              name="surname"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-white">Surname</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Your surname"
+                      className="bg-secondary rounded py-6"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          {/* Subject */}
-          <div className="flex flex-col space-y-2">
-            <Label htmlFor="subject" className="text-white">
-              Subject
-            </Label>
-            <Input
-              id="subject"
-              placeholder="Project subject"
-              className="bg-secondary rounded py-6"
+            {/* Subject Field */}
+            <FormField
+              control={form.control}
+              name="subject"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-white">Subject</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Project subject"
+                      className="bg-secondary rounded py-6"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          {/* Message */}
-          <div className="flex flex-col space-y-2">
-            <Label htmlFor="message" className="text-white">
-              Message
-            </Label>
-            <Textarea
-              id="message"
-              placeholder="Write your message..."
-              className="bg-secondary rounded min-h-[120px]"
+            {/* Message Field */}
+            <FormField
+              control={form.control}
+              name="message"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-white">Message</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Write your message..."
+                      className="bg-secondary rounded min-h-[120px]"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
 
-          {/* CTA Button */}
-          <Button
-            type="submit"
-            className="w-full bg-yellow-200 text-black font-bold hover:bg-yellow-300 rounded py-6"
-          >
-            Send
-          </Button>
-        </form>
+            {/* Submit Button */}
+            <Button
+              type="submit"
+              disabled={isLoading}
+              onClick={form.handleSubmit(onSubmit)}
+              className="w-full bg-yellow-200 text-black font-bold hover:bg-yellow-300 rounded py-6 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isLoading ? 'Sending...' : 'Send'}
+            </Button>
+          </div>
+        </Form>
       </div>
     </section>
   );
