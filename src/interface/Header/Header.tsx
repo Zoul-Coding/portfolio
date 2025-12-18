@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { AlignJustify } from "lucide-react";
 import { Link } from "react-router-dom";
-import Logo from '/img/logo.svg';
+import Logo from '../../../public/assets/img/logo.svg';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,7 +39,7 @@ const Header = () => {
   const navLinks = [
     { name: "Skills", path: "#" },
     { name: "Projects", path: "#" },
-    { name: "Blog", path: "#" },
+   /*  { name: "Blog", path: "#" }, */
     { name: "Contact", path: "#" },
   ];
 
@@ -62,7 +62,7 @@ const Header = () => {
               <a
                 key={index}
                 href={link.path}
-                className="hover:text-gray-300 text-gray-300"
+                className="text-gray-300 hover:underline hover:text-yellow-200"
               >
                 {link.name}
               </a>

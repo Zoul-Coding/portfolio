@@ -1,48 +1,90 @@
 import {
-    Card,
-} from "@/components/ui/card"
-import ReactImg from '/img/react.svg';
-import TailwindImg from '/img/tailwind-css.svg';
-import TypeScriptImg from '/img/typescript.svg';
+  Marquee,
+  MarqueeContent,
+  MarqueeFade,
+  MarqueeItem,
+} from "@/components/ui/shadcn-io/marquee";
+import ReactImg from "../../../public/assets/img/react.svg";
+import TailwindImg from "../../../public/assets/img/tailwind-css.svg";
+import TypeScriptImg from "../../../public/assets/img/typescript.svg";
+import GitImg from "../../../public/assets/img/Skills/git.png";
+import GitHubImg from "../../../public/assets/img/Skills/github.svg";
+import NextJsImg from "../../../public/assets/img/Skills/next-js.svg";
+import AngularImg from "../../../public/assets/img/Skills/angular.png";
+import FigmaImg from "../../../public/assets/img/Skills/figma.png";
+import ApiImg from "../../../public/assets/img/Skills/api.svg";
 
+export const skillData = [
+  {
+    name: "React",
+    img: ReactImg,
+  },
+  {
+    name: "Tailwind CSS",
+    img: TailwindImg,
+  },
+  {
+    name: "TypeScript",
+    img: TypeScriptImg,
+  },
+  {
+    name: "Git",
+    img: GitImg,
+  },
+  {
+    name: "GitHub",
+    img: GitHubImg,
+  },
+  {
+    name: "Next Js",
+    img: NextJsImg,
+  },
+  {
+    name: "Angular",
+    img: AngularImg,
+  },
+  {
+    name: "Figma",
+    img: FigmaImg,
+  },
+  {
+    name: "Api Rest",
+    img: ApiImg,
+  },
+];
 
-const Skills = () => {
-    return (
-        <div className="max-w-screen-xl mx-auto xl:px-0 px-5 pt-16 pb-16">
-            <div className="">
-                <h3 className="md:text-3xl text-2xl text-center font-bold">Skills</h3>
-                <p className="text-muted-foreground text-center font-normal md:text-2xl text-1xl leading-[28px] pt-2">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                </p>
-                <div className="grid lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 pt-12">
-                    <Card className="bg-gray-950 border-border rounded-[8px] py-16">
-                        <div className="flex flex-col justify-center items-center gap-6">
-                            <img src={ReactImg} className='w-20 h-20' alt="" />
-                            <h3 className="font-medium text-2xl">
-                                React
-                            </h3>
-                        </div>
-                    </Card>
-                    <Card className="bg-gray-950 border-border rounded-[8px] py-16">
-                        <div className="flex flex-col justify-center items-center gap-6">
-                            <img src={TailwindImg} className='w-20 h-20' alt="" />
-                            <h3 className="font-medium text-2xl">
-                                TailwindCss
-                            </h3>
-                        </div>
-                    </Card>
-                    <Card className="bg-gray-950 border-border rounded-[8px] py-16">
-                        <div className="flex flex-col justify-center items-center gap-6">
-                            <img src={TypeScriptImg} className='w-20 h-20' alt="" />
-                            <h3 className="font-medium text-2xl">
-                                TypeScript
-                            </h3>
-                        </div>
-                    </Card>
-                </div>
-            </div>
-        </div>
-    )
-}
+const Skills = () => (
+  <section className="pt-16 pb-16">
+    <div className="flex flex-col gap-3">
+      <h3 className="md:text-3xl text-2xl font-bold text-center">My skills</h3>
+      <p className="text-muted-foreground text-center font-normal md:text-2xl text-xl leading-[28px]">
+        Here are the technologies I work with
+      </p>
+    </div>
+    <div className="flex size-full items-center justify-center pt-12">
+      <Marquee>
+        <MarqueeFade side="left" />
+        <MarqueeFade side="right" />
+        <MarqueeContent>
+          {skillData.map((skill, index) => (
+            <MarqueeItem
+              className="flex flex-col items-center h-32 w-32"
+              key={index}
+            >
+              <img
+                alt={skill.name}
+                className="overflow-hidden rounded h-24 w-24"
+                src={skill.img}
+              />
+              <p className="text-white text-center font-inter text-md pt-4">
+                {skill.name}
+              </p>
+            </MarqueeItem>
+          ))}
+        </MarqueeContent>
+      </Marquee>
+    </div>
+  </section>
+);
 
-export default Skills
+export default Skills;

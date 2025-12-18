@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 
 export const CardSpotlight = ({
   children,
-  radius = 350,
-  color = "#F1DDB4", // Remplacement par la couleur principale dorée
+  radius = 250,
+  color = "#000000", // Remplacement par la couleur principale dorée
   className,
   ...props
 }: {
@@ -61,9 +61,9 @@ export const CardSpotlight = ({
             animationSpeed={5}
             containerClassName="bg-transparent absolute inset-0 pointer-events-none"
             colors={[
-              [242, 206, 132], // Utilisation du doré (F2CE84)
-              [107, 79, 58],   // Brun foncé (Complémentaire)
-              [217, 145, 91],  // Accent orange-brun
+               [242, 406, 132], // Utilisation du doré (F2CE84)
+            [107, 79, 58], // Brun foncé (Complémentaire)
+            [217, 145, 91], // Accent orange-brun
             ]}
             dotSize={3}
           />

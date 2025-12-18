@@ -5,6 +5,7 @@ import { FaReact, FaGithub, FaLink } from 'react-icons/fa';
 import { RiTailwindCssFill } from 'react-icons/ri';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
+import Footer from '../Footer/Footer';
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
@@ -18,11 +19,11 @@ const ProjectDetail = () => {
     return (
       <div className="max-w-screen-xl mx-auto xl:px-0 px-5 pt-16 pb-16 min-h-screen">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">Projet non trouvé</h1>
-          <p className="text-gray-500 mb-8">Le projet que vous recherchez n'existe pas.</p>
+          <h1 className="text-4xl font-bold mb-4">Project not found</h1>
+          <p className="text-gray-500 mb-8">The project you are looking for does not exist.</p>
           <Link to="/">
             <Button className="bg-yellow-200 text-black hover:bg-yellow-300">
-              Retour aux projets
+              Return to projects
             </Button>
           </Link>
         </div>
@@ -53,12 +54,21 @@ const ProjectDetail = () => {
           className="mb-8 flex items-center gap-2 hover:bg-secondary rounded-xl"
         >
           <ArrowLeft size={20} />
-          Retour aux projets
+          Return to projects
         </Button>
       </div>
 
       {/* Contenu principal */}
-      <div className="max-w-screen-xl mx-auto xl:px-0 px-5 pb-16">
+      <div className="max-w-screen-xl mx-auto xl:px-0 px-5 pb-0">
+         {/* Image principale */}
+        <div className="mb-12">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-64 md:h-[600px] object-cover rounded-xl shadow-2xl"
+          />
+        </div>
+
         {/* Titre et sous-titre */}
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">{project.title}</h1>
@@ -78,14 +88,24 @@ const ProjectDetail = () => {
           ))}
         </div>
 
-        {/* Image principale */}
-        <div className="mb-12">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="w-full h-64 md:h-[600px] object-cover rounded-xl shadow-2xl"
-          />
-        </div>
+        
+        {/* Informations du projet */}
+        {(project.duration || project.role) && (
+          <div className="grid md:grid-cols-2 gap-6 mb-12 p-6 bg-secondary rounded-xl">
+            {project.duration && (
+              <div>
+                <p className="text-sm text-gray-500 mb-1 uppercase tracking-wider">Durée</p>
+                <p className="text-2xl font-semibold">{project.duration}</p>
+              </div>
+            )}
+            {project.role && (
+              <div>
+                <p className="text-sm text-gray-500 mb-1 uppercase tracking-wider">Rôle</p>
+                <p className="text-2xl font-semibold">{project.role}</p>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Liens rapides */}
         <div className="flex flex-wrap gap-4 mb-12">
@@ -116,24 +136,6 @@ const ProjectDetail = () => {
             </a>
           )}
         </div>
-
-        {/* Informations du projet */}
-        {(project.duration || project.role) && (
-          <div className="grid md:grid-cols-2 gap-6 mb-12 p-6 bg-secondary rounded-xl">
-            {project.duration && (
-              <div>
-                <p className="text-sm text-gray-500 mb-1 uppercase tracking-wider">Durée</p>
-                <p className="text-2xl font-semibold">{project.duration}</p>
-              </div>
-            )}
-            {project.role && (
-              <div>
-                <p className="text-sm text-gray-500 mb-1 uppercase tracking-wider">Rôle</p>
-                <p className="text-2xl font-semibold">{project.role}</p>
-              </div>
-            )}
-          </div>
-        )}
 
         {/* Description complète */}
         <div className="mb-12">
@@ -184,7 +186,7 @@ const ProjectDetail = () => {
         {/* Galerie d'images supplémentaires (si disponibles) */}
         {project.images && project.images.length > 1 && (
           <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-6">Galerie</h2>
+            <h2 className="text-3xl font-bold mb-6">Photos</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {project.images.map((img, index) => (
                 <img
@@ -199,7 +201,7 @@ const ProjectDetail = () => {
         )}
 
         {/* Call to action final */}
-        <div className="text-center pt-12 border-t border-gray-800">
+    {/*     <div className="text-center pt-12 border-t border-gray-800">
           <h3 className="text-2xl font-bold mb-4">Intéressé par ce projet ?</h3>
           <p className="text-gray-400 mb-6">N'hésitez pas à consulter le code ou à visiter le site en ligne.</p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -228,7 +230,9 @@ const ProjectDetail = () => {
               </a>
             )}
           </div>
-        </div>
+        </div> */}
+
+       <Footer />
       </div>
     </div>
   );

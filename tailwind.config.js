@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -58,9 +58,9 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-  			'testimonial-shadow': '0px 22px 84px 0px rgba(0, 0, 0, 0.1)',
-			  'card-shadow': '0px 0px 42.9px 0px rgba(0, 0, 0, 0.1)',
-  		},
+        "testimonial-shadow": "0px 22px 84px 0px rgba(0, 0, 0, 0.1)",
+        "card-shadow": "0px 0px 42.9px 0px rgba(0, 0, 0, 0.1)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -75,7 +75,12 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        sans: ["Inter", "sans-serif"], // fallback global
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
