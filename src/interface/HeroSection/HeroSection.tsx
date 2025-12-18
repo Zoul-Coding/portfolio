@@ -1,7 +1,5 @@
 import { CardSpotlight } from "@/components/ui/card-spotlight-static";
 import Cv from "../../../public/assets/files/Cv_Zoulkifirou_SABI_ADAM.pdf";
-/* import Profile from "/img/profile.jpg"; */
-import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
