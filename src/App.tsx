@@ -8,6 +8,7 @@ import Contact from "./interface/Contact/Contact";
 import ProjectDetail from "./interface/Projects/ProjectDetail";
 import Footer from "./interface/Footer/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import About from "./interface/About/About";
 
 // Page d'accueil avec toutes les sections
 const HomePage = () => {
@@ -15,6 +16,7 @@ const HomePage = () => {
     <>
       <Header />
       <HeroSection />
+      <About />
       <Skills />
       <Projects />
       <Contact />

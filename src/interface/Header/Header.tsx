@@ -20,7 +20,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       // Si l'utilisateur a scrollé plus de 50px
-      if (window.scrollY > 50) {
+      if (window.scrollY > 80) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
