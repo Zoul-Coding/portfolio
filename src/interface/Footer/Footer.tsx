@@ -1,7 +1,7 @@
 import { LucideLinkedin, LucideGithub, Mail, ArrowUp, Heart, Code2 } from "lucide-react";
 import { FaBehance } from "react-icons/fa";
-import { Link } from "react-router-dom";
-
+/* import { Link } from "react-router-dom";
+ */
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -28,7 +28,7 @@ const Footer = () => {
     },
   ];
 
-  const footerLinks = [
+ /*  const footerLinks = [
     {
       title: "Navigation",
       links: [
@@ -39,7 +39,7 @@ const Footer = () => {
         { name: "Contact", href: "#contact" },
       ],
     },
-  ];
+  ]; */
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
