@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import Profile from "../../../public/assets/img/profile_full.png";
 
 const About = () => {
-
   const values = [
     {
       icon: <Code className="w-8 h-8" />,
@@ -60,10 +59,13 @@ const About = () => {
                     src={Profile}
                     alt="Profile"
                     className="w-full h-full object-cover rounded-xl"
-                    onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                    onError={(
+                      e: React.SyntheticEvent<HTMLImageElement, Event>
+                    ) => {
                       const img = e.currentTarget;
                       img.style.display = "none";
-                      const sibling = img.nextElementSibling as HTMLElement | null;
+                      const sibling =
+                        img.nextElementSibling as HTMLElement | null;
                       if (sibling) sibling.style.display = "flex";
                     }}
                   />
@@ -84,35 +86,58 @@ const About = () => {
           <div className="space-y-6">
             <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
               <p>
-                👋 Salut ! Je suis un développeur passionné par la création
-                d'applications web modernes et performantes. Avec plusieurs
-                années d'expérience, je transforme des idées en solutions
-                digitales concrètes.
-              </p>
-              <p>
-                💡 Mon expertise couvre le développement front-end avec{" "}
-                <span className="text-yellow-200 font-semibold">React</span>,
-                <span className="text-yellow-200 font-semibold"> Next.js</span>,
-                et le design avec
+                👋 Salut ! Je suis un{" "}
                 <span className="text-yellow-200 font-semibold">
-                  {" "}
-                  Tailwind CSS
+                  Développeur Frontend & Designer UX/UI
                 </span>
-                . Je maîtrise également le back-end avec{" "}
-                <span className="text-yellow-200 font-semibold">
-                  Node.js
-                </span>{" "}
-                et les bases de données.
+                , passionné par la création d’expériences digitales utiles,
+                intuitives et performantes. J’accompagne les projets de l’idée
+                jusqu’à une interface fonctionnelle et centrée utilisateur.
               </p>
+
               <p>
-                🚀 Je suis constamment en apprentissage, explorant les nouvelles
-                technologies et les meilleures pratiques pour offrir des
-                solutions innovantes et efficaces.
+                💡 J’interviens sur le{" "}
+                <span className="text-yellow-200 font-semibold">
+                  développement front-end
+                </span>{" "}
+                avec
+                <span className="text-yellow-200 font-semibold"> React</span> et
+                <span className="text-yellow-200 font-semibold"> Next.js</span>,
+                en assurant une intégration{" "}
+                <span className="text-yellow-200 font-semibold">
+                  pixel-perfect
+                </span>{" "}
+                des maquettes conçues sur{" "}
+                <span className="text-yellow-200 font-semibold">Figma</span>.
+                J’utilise{" "}
+                <span className="text-yellow-200 font-semibold">
+                  Tailwind CSS
+                </span>{" "}
+                pour créer des interfaces modernes, accessibles et responsives.
+              </p>
+
+              <p>
+                🎯 Côté{" "}
+                <span className="text-yellow-200 font-semibold">UX/UI</span>, je
+                m’appuie sur la recherche utilisateur, la structuration des
+                parcours, le wireframing et le prototypage pour concevoir des
+                expériences claires, orientées conversion et alignées avec les
+                objectifs business.
+              </p>
+
+              <p>
+                🚀 Curieux et en apprentissage continu, je combine{" "}
+                <span className="text-yellow-200 font-semibold">technique</span>
+                et <span className="text-yellow-200 font-semibold">
+                  design
+                </span>{" "}
+                pour livrer des solutions digitales cohérentes, performantes et
+                à forte valeur ajoutée.
               </p>
             </div>
 
             {/* Tags de compétences */}
-           {/*  <div className="flex flex-wrap gap-3 pt-4">
+            {/*  <div className="flex flex-wrap gap-3 pt-4">
               {[
                 "React",
                 "TypeScript",
@@ -175,7 +200,7 @@ const About = () => {
         </div>
 
         {/* Timeline / Parcours (Optionnel) */}
-     {/*    <div className="mt-20">
+        {/*    <div className="mt-20">
           <h3 className="text-3xl font-bold text-center mb-12">
             Mon <span className="text-yellow-200">parcours</span>
           </h3>

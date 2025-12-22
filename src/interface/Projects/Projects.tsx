@@ -92,7 +92,7 @@ const Projects = () => {
                           .map((tech, techIndex) => (
                             <span
                               key={techIndex}
-                              className={`bg-${tech.bg} flex items-center justify-center gap-2 px-3 py-1.5 rounded-lg border border-gray-700 hover:border-yellow-200/50 transition-all duration-300 hover:scale-105`}
+                              className={`bg-${tech.bg} flex items-center justify-center gap-2 px-3 py-1.5 rounded-xl border border-gray-700 hover:border-yellow-200/50 transition-all duration-300 hover:scale-105`}
                             >
                               {renderTechIcon(tech.icon, tech.color)}
                               <p className={`text-xs text-${tech.color} font-bold`}>

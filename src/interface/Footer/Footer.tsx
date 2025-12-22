@@ -1,61 +1,108 @@
-import { LucideLinkedin, LucideGithub, Mail } from "lucide-react";
+import { LucideLinkedin, LucideGithub, Mail, ArrowUp, Heart, Code2 } from "lucide-react";
 import { FaBehance } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    {
+      name: "LinkedIn",
+      icon: <LucideLinkedin className="text-yellow-200" size={18} />,
+      href: "https://www.linkedin.com/in/zoulkifirou-sabi-adam-73ab0b296",
+    },
+    {
+      name: "GitHub",
+      icon: <LucideGithub className="text-yellow-200" size={18} />,
+      href: "https://github.com/Zoul-Coding",
+    },
+    {
+      name: "Gmail",
+      icon: <Mail className="text-yellow-200" size={18} />,
+      href: "mailto:votre.email@gmail.com", // Remplace par ton email
+    },
+    {
+      name: "Behance",
+      icon: <FaBehance className="text-yellow-200" size={18} />,
+      href: "https://www.behance.net/zoulsad",
+    },
+  ];
+
+  const footerLinks = [
+    {
+      title: "Navigation",
+      links: [
+        { name: "Accueil", href: "#home" },
+        { name: "À propos", href: "#about" },
+        { name: "Compétences", href: "#skills" },
+        { name: "Projets", href: "#projects" },
+        { name: "Contact", href: "#contact" },
+      ],
+    },
+  ];
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <section className="max-w-screen-xl mx-auto xl:px-0 px-5 pt-16 pb-0">
-      <div className="border border-t-gray-900 border-b-0 border-l-0 border-r-0">
-        <div className="flex justify-between items-center flex-col gap-10 pt-8 pb-8">
-          <div className="w-full">
-            <div>
-              <p className="text-muted-foreground font-poppins-regular max-w-xl mx-auto font-normal text-2xl text-center leading-[28px] pt-4">
-                I currently specialize in{" "}
-                <span className="text-yellow-200 font-poppins">
-                  Front-end Development and UX/UI Design.
-                </span>{" "}
-                Feel free to contact me to discuss your projects.
-              </p>
+    <footer className="bg-gradient-to-b from-background to-secondary/20 relative overflow-hidden">
+      {/* Particules d'arrière-plan */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-50">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-200/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-yellow-200/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-screen-xl mx-auto xl:px-0 px-5 relative z-10">
+
+        {/* Section réseaux sociaux */}
+        <div className="border-t border-gray-800 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 mb-2">Suivez-moi sur</p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-3">
+                {socialLinks.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group bg-secondary hover:bg-gray-700 flex items-center justify-center gap-2 px-4 h-11 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] border border-transparent hover:border-yellow-200/30"
+                  >
+                    <span className="group-hover:scale-110 transition-transform">
+                      {social.icon}
+                    </span>
+                    <span className="text-sm font-medium">{social.name}</span>
+                  </a>
+                ))}
+              </div>
             </div>
 
-            {/* Social Buttons */}
-            <div className="flex md:justify-center justify-center space-x-4 pt-4">
-              <a
-                href="https://www.linkedin.com/in/zoulkifirou-sabi-adam-73ab0b296"
-                target="_blank"
-                className="bg-secondary hover:bg-gray-700 flex items-center justify-center gap-2 w-32 h-10 rounded-[8px]"
-              >
-                <LucideLinkedin className="text-yellow-200" size={16} />
-                <p className="text-md font-poppins">Linkedin</p>
-              </a>
-              <a
-                href="https://github.com/Zoul-Coding"
-                target="_blank"
-                className="bg-secondary hover:bg-gray-700 flex items-center justify-center gap-2 w-28 h-10 rounded-[8px]"
-              >
-                <LucideGithub className="text-yellow-200" size={16} />
-                <p className="text-md font-poppins">Github</p>
-              </a>
-              <a
-                href="https://github.com/Zoul-Coding"
-                target="_blank"
-                className="bg-secondary hover:bg-gray-700 flex items-center justify-center gap-2 w-28 h-10 rounded-[8px]"
-              >
-                <Mail className="text-yellow-200" size={16} />
-                <p className="text-md font-poppins">Gmail</p>
-              </a>
-              <a
-                href="https://www.behance.net/zoulsad"
-                target="_blank"
-                className="bg-secondary hover:bg-gray-700 flex items-center justify-center gap-2 w-28 h-10 rounded-[8px]"
-              >
-                <FaBehance className="text-yellow-200" size={16} />
-                <p className="text-md font-poppins">Behance</p>
-              </a>
-            </div>
+            {/* Bouton scroll to top */}
+            <button
+              onClick={scrollToTop}
+              className="group bg-secondary hover:bg-gray-700 w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] border border-gray-800 hover:border-yellow-200/50"
+              aria-label="Retour en haut"
+            >
+              <ArrowUp className="w-5 h-5 text-yellow-200 group-hover:translate-y-[-2px] transition-transform" />
+            </button>
+          </div>
+        </div>
+
+        {/* Copyright et crédits */}
+        <div className="border-t border-gray-800 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+            <p className="flex items-center gap-2">
+              © {currentYear} Zoulkifirou SABI ADAM. Tous droits réservés.
+            </p>
+            <p className="flex items-center gap-2">
+              Conçu avec <Heart className="w-4 h-4 text-red-500 animate-pulse" /> et{" "}
+              <Code2 className="w-4 h-4 text-yellow-200" />
+            </p>
           </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 };
 

@@ -1,14 +1,16 @@
-// src/data/projectsData.js
 export const projectsData = [
   {
     id: "1",
     title: "Annuaire du Royaume",
     shortDescription:
-      "A platform listing companies, services and professionals with an advanced search engine.",
+      "Une plateforme de référencement d’entreprises, de services et de professionnels avec un moteur de recherche avancé.",
     fullDescription:
-      "The Kingdom Directory is a modern platform that allows users to quickly search for businesses and services through a powerful search engine, well-structured categories, and detailed listings. I participated in the front-end development by optimizing the UX, page structure, navigation, and dynamic data management.",
+      "Annuaire du Royaume est une plateforme moderne permettant aux utilisateurs de rechercher rapidement des entreprises et des services grâce à un moteur de recherche performant, des catégories bien structurées et des fiches détaillées. J’ai contribué au développement front-end en optimisant l’expérience utilisateur, la structure des pages, la navigation et la gestion dynamique des données.",
     image: "/assets/img/Project/project-1.png",
-    images: ["/assets/img/Project/project-2.png", "/assets/img/Project/project-3.png"],
+    images: [
+      "/assets/img/Project/project-2.png",
+      "/assets/img/Project/project-3.png",
+    ],
     technologies: [
       { name: "React", icon: "FaReact", color: "blue-300", bg: "gray-800" },
       {
@@ -22,17 +24,17 @@ export const projectsData = [
     githubLink: "",
     liveLink: "https://www.annuaireduroyaume.com/",
     features: [
-      "Fast and dynamic search engine",
-      "Navigation by categories and subcategories",
-      "Detailed company profiles (contacts, activities, locations...)",
-      "Responsive UI optimized for mobile",
-      "Intelligent data loading (pagination / filtering)",
+      "Moteur de recherche rapide et dynamique",
+      "Navigation par catégories et sous-catégories",
+      "Fiches entreprises détaillées (contacts, activités, localisations…)",
+      "Interface responsive optimisée pour mobile",
+      "Chargement intelligent des données (pagination / filtrage)",
     ],
     challenges:
-      "One of the major challenges was optimizing search performance and rendering lists of companies containing large amounts of data. To improve the experience, I implemented a pagination system and optimized API requests.",
+      "L’un des principaux défis a été l’optimisation des performances du moteur de recherche et de l’affichage des listes d’entreprises contenant un grand volume de données. Pour améliorer l’expérience utilisateur, j’ai mis en place un système de pagination et optimisé les requêtes API.",
     learnings:
-      "This project helped me strengthen my skills in state management, React optimization, UI/UX structuring, and API integration. I also learned to design a highly performant interface despite a large volume of data.",
-    duration: "2 months",
-    role: "Front-End Developer",
+      "Ce projet m’a permis de renforcer mes compétences en gestion d’état, optimisation React, structuration UI/UX et intégration d’API. J’ai également appris à concevoir une interface hautement performante malgré un volume de données important.",
+    duration: "2 mois",
+    role: "Développeur Frontend",
   },
 ];
