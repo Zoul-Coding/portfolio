@@ -54,7 +54,7 @@ const About = () => {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-200/20 to-transparent p-1">
               <div className="bg-secondary rounded-2xl p-8">
-                <div className="aspect-square bg-gradient-to-br from-yellow-200/10 to-transparent rounded-xl mb-6 flex items-center justify-center">
+                <div className="aspect-square bg-gradient-to-br from-yellow-200/10 to-transparent rounded-xl flex items-center justify-center">
                   <img
                     src={Profile}
                     alt="Profile"

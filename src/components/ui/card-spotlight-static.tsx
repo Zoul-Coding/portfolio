@@ -32,7 +32,7 @@ export const CardSpotlight = ({
   return (
     <div
       ref={containerRef}
-      className={cn("p-10 rounded-md relative overflow-hidden", className)}
+      className={cn("rounded-md relative overflow-hidden", className)}
       {...props}
     >
       <motion.div

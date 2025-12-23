@@ -147,7 +147,7 @@ const Projects = () => {
                             rel="noopener noreferrer"
                           >
                             <Code2 size={18} />
-                            <span className="hidden sm:inline">Démo</span>
+                            <span className="inline">Démo</span>
                           </a>
                         )}
                         

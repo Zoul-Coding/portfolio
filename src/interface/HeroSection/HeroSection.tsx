@@ -1,5 +1,5 @@
-import { CardSpotlight } from "@/components/ui/card-spotlight-static";
-import {
+/* import { CardSpotlight } from "@/components/ui/card-spotlight-static";
+ */import {
   ArrowDown,
   Download,
   Sparkles /* LucideLinkedin, LucideGithub, Mail */,
@@ -34,24 +34,23 @@ export function HeroSection() {
   return (
     <section id="home" className="relative overflow-hidden">
       {/* Background gradient animé */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/20 to-background">
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/10 to-background">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-200/10 via-transparent to-transparent"></div>
       </div>
 
       {/* Particules flottantes */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-200/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-200/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-yellow-200/5 rounded-full blur-3xl animate-pulse delay-500"></div>
-      </div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-200/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-200/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 w-80 h-80 bg-yellow-200/10 rounded-full blur-3xl animate-pulse delay-500"></div>      </div>
 
-      <CardSpotlight className="flex items-center justify-center md:h-[116vh] h-[100vh] relative">
+     {/*  <CardSpotlight className="flex items-center justify-center w-full md:h-[116vh] h-[100vh] relative"> */}
         <div className="max-w-screen-lg mx-auto px-3">
-          <div className="flex flex-col justify-center h-screen items-center">
+          <div className="flex flex-col justify-center h-screen items-center pt-20">
             <div className="z-40 relative">
               {/* Badge animé */}
               <div className="flex justify-center mb-6 animate-fade-in-down">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-200/10 border border-yellow-200/20 backdrop-blur-sm">
+                <div className="inline-flex items-center gap-2 md:px-4 px-3 py-2 rounded-full bg-yellow-200/10 border border-yellow-200/20 backdrop-blur-sm">
                   <Sparkles className="w-4 h-4 text-yellow-200 animate-pulse" />
                   <span className="text-yellow-200 text-sm font-medium">
                     Disponible pour des missions freelance
@@ -74,9 +73,9 @@ export function HeroSection() {
               <p className="text-gray-200 font-inter max-w-screen-md mx-auto font-normal md:text-2xl text-xl text-center leading-relaxed animate-fade-in opacity-0 animation-delay-200">
                 Je conçois et développe des interfaces modernes et performantes
                 qui offrent des expériences utilisateur fluides et intuitives.
-                De la conception UX/UI au développement front-end, je donne vie
+               {/*  De la conception UX/UI au développement front-end, je donne vie
                 aux idées avec des solutions numériques centrées sur
-                l'utilisateur.
+                l'utilisateur. */}
               </p>
 
               {/* Boutons avec animations */}
@@ -137,7 +136,7 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-      </CardSpotlight>
+     {/*  </CardSpotlight> */}
     </section>
   );
 }

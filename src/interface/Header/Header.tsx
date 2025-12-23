@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { AlignJustify, X } from "lucide-react";
+import { AlignJustify,/*  X */ } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../../../public/assets/img/logo.svg";
 
@@ -119,7 +119,7 @@ const Header = () => {
         </Link>
 
         {/* Navigation Desktop */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => {
             const sectionId = link.href.replace("#", "");
             const isActive = activeSection === sectionId;
@@ -154,7 +154,7 @@ const Header = () => {
         </div>
 
         {/* Burger Menu Mobile */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Dialog open={isOpen} onOpenChange={closeDialog}>
             <button
               onClick={openDialog}
@@ -165,20 +165,20 @@ const Header = () => {
             </button>
 
             <DialogContent
-              className={`fixed left-0 right-0 top-[73px] border-t border-gray-800 w-full bg-background/95 backdrop-blur-md transform transition-all duration-300 ease-in-out ${
+              className={`fixed left-0 right-0 top-0 border-b border-gray-800 border-t-0 border-r-0 border-l-0 w-full translate-x-0 bg-background/95 backdrop-blur-md transform transition-all duration-300 ease-in-out ${
                 isOpen
                   ? "translate-y-0 opacity-100"
                   : "-translate-y-4 opacity-0"
               }`}
             >
               {/* Bouton fermer */}
-              <button
+             {/*  <button
                 onClick={closeDialog}
-                className="absolute top-4 right-5 text-gray-300 hover:text-yellow-200 transition-colors"
+                className="absolute top-4 right-5 text-gray-300 hover:text-yellow-200"
                 aria-label="Fermer le menu"
               >
                 <X size={24} />
-              </button>
+              </button> */}
 
               {/* Navigation Mobile */}
               <nav className="flex flex-col space-y-6 pt-8 pb-6">
