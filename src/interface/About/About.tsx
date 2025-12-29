@@ -1,7 +1,7 @@
 import React from "react";
 import { Code, Palette, Rocket, Users, Award, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Profile from "../../../public/assets/img/profile_full.png";
+import Profile from "../../../public/assets/img/profile_full.webp";
 
 const About = () => {
   const values = [

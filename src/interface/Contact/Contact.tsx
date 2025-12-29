@@ -111,8 +111,8 @@ const Contact = () => {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      value: "votre.email@gmail.com",
-      link: "mailto:votre.email@gmail.com",
+      value: "zoulkifirousabiadam@gmail.com",
+      link: "mailto:zoulkifirousabiadam@gmail.com",
     },
     {
       icon: <MapPin className="w-6 h-6" />,
