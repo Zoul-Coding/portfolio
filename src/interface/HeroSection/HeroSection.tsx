@@ -126,7 +126,7 @@ export function HeroSection() {
                   </a>
                 ))}
               </div>
- */}
+            */}
             {/* Scroll indicator animé */}
             {/* <div className="hidden md:flex justify-center pt-12 animate-bounce">
               <div className="flex flex-col items-center justify-center gap-2 text-gray-400">

@@ -139,7 +139,7 @@ const Contact = () => {
         <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-yellow-200/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="max-w-screen-xl mx-auto xl:px-0 px-5 relative z-10">
+      <div className="lg:max-w-screen-xl mx-auto xl:px-0 px-5 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="md:text-5xl text-4xl font-bold mb-4">
@@ -150,10 +150,10 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-12">
+        <div className="grid lg:grid-cols-5 grid-cols-1 gap-12">
           {/* Informations de contact */}
           <div className="lg:col-span-2 space-y-6 animate-fade-in opacity-0 animation-delay-200">
-            <div className="bg-secondary rounded-2xl p-8 border border-gray-800">
+            <div className="w-full bg-secondary rounded-2xl p-8 border border-gray-800">
               <h3 className="text-2xl font-bold mb-6">
                 Informations de contact
               </h3>
@@ -167,12 +167,12 @@ const Contact = () => {
                     <div className="text-yellow-200 group-hover:scale-110 transition-transform">
                       {info.icon}
                     </div>
-                    <div className="flex-1">
+                    <div className="flex-1 min-w-0">
                       <p className="text-sm text-gray-400 mb-1">{info.title}</p>
                       {info.link ? (
                         <a
                           href={info.link}
-                          className="text-white hover:text-yellow-200 transition-colors font-medium"
+                          className="block break-words text-white hover:text-yellow-200 transition-colors font-medium"
                         >
                           {info.value}
                         </a>
