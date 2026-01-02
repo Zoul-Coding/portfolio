@@ -9,7 +9,7 @@ import {
 import { FaReact, FaGithub } from "react-icons/fa";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, ExternalLink, Code2 } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { projectsData } from "../../data/ProjectData";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 
@@ -146,7 +146,6 @@ const Projects = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            <Code2 size={18} />
                             <span className="inline">Démo</span>
                           </a>
                         )}
@@ -154,7 +153,6 @@ const Projects = () => {
                         <Link to={`/project/${project.id}`} className="flex-1">
                           <Button className="w-full h-11 rounded-xl font-poppins bg-yellow-200 text-black font-semibold hover:bg-yellow-300 transition-all duration-300 flex items-center justify-center gap-2 hover:shadow-[0_0_30px_rgba(250,204,21,0.3)] hover:scale-105">
                             Détails
-                            <ArrowUpRight size={18} />
                           </Button>
                         </Link>
                       </div>
@@ -164,19 +162,6 @@ const Projects = () => {
               </Card>
             </div>
           ))}
-        </div>
-
-        {/* Call to action final */}
-        <div className="text-center mt-16 animate-fade-in opacity-0 animation-delay-600">
-          <p className="text-xl text-gray-400 mb-6">
-            Vous avez un projet en tête ?
-          </p>
-          <a href="#contact">
-            <Button className="bg-yellow-200 text-black hover:bg-yellow-300 px-8 h-12 text-lg font-semibold rounded-xl transition-all duration-300 hover:shadow-[0_0_30px_rgba(250,204,21,0.3)] hover:scale-105">
-              Parlons-en ensemble
-              <ArrowUpRight className="ml-2" />
-            </Button>
-          </a>
         </div>
       </div>
     </section>

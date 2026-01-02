@@ -1,5 +1,5 @@
 import React from "react";
-import { Code, Palette, Rocket, Users, Award, BookOpen } from "lucide-react";
+import { Code, Palette, Rocket, Users, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Profile from "../../../public/assets/img/profile_full.webp";
 
@@ -75,18 +75,13 @@ const About = () => {
                 </div>
               </div>
             </div>
-
-            {/* Badge flottant */}
-            <div className="absolute -top-4 -right-4 bg-yellow-200 text-black px-6 py-3 rounded-full font-bold shadow-lg rotate-3 hidden md:block">
-              Disponible pour des projets
-            </div>
           </div>
 
           {/* Description */}
           <div className="space-y-6">
             <div className="space-y-4 text-gray-300 text-lg leading-relaxed">
               <p>
-                👋 Salut ! Je suis un{" "}
+                Salut ! Je suis un{" "}
                 <span className="text-yellow-200 font-semibold">
                   Développeur Frontend & Designer UX/UI
                 </span>
@@ -96,7 +91,7 @@ const About = () => {
               </p>
 
               <p>
-                💡 J’interviens sur le{" "}
+                J’interviens sur le{" "}
                 <span className="text-yellow-200 font-semibold">
                   développement front-end
                 </span>{" "}
@@ -117,7 +112,7 @@ const About = () => {
               </p>
 
               <p>
-                🎯 Côté{" "}
+                Côté{" "}
                 <span className="text-yellow-200 font-semibold">UX/UI</span>, je
                 m’appuie sur la recherche utilisateur, la structuration des
                 parcours, le wireframing et le prototypage pour concevoir des
@@ -126,7 +121,7 @@ const About = () => {
               </p>
 
               <p>
-                🚀 Curieux et en apprentissage continu, je combine{" "}
+                Curieux et en apprentissage continu, je combine{" "}
                 <span className="text-yellow-200 font-semibold">technique</span>
                 et <span className="text-yellow-200 font-semibold">
                   design
@@ -135,26 +130,6 @@ const About = () => {
                 à forte valeur ajoutée.
               </p>
             </div>
-
-            {/* Tags de compétences */}
-            {/*  <div className="flex flex-wrap gap-3 pt-4">
-              {[
-                "React",
-                "TypeScript",
-                "Node.js",
-                "Tailwind CSS",
-                "Next.js",
-                "MongoDB",
-                "Git",
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 bg-secondary rounded-full text-sm font-medium border border-gray-700 hover:border-yellow-200 hover:text-yellow-200 transition-colors cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div> */}
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 pt-6">
@@ -168,7 +143,7 @@ const About = () => {
                   variant="outline"
                   className="border-gray-700 hover:bg-secondary px-6 h-12 text-base font-medium rounded-xl"
                 >
-                  <BookOpen className="mr-2 w-5 h-5" />
+                 {/*  <BookOpen className="mr-2 w-5 h-5" /> */}
                   Télécharger mon CV
                 </Button>
               </a>
@@ -198,50 +173,6 @@ const About = () => {
             ))}
           </div>
         </div>
-
-        {/* Timeline / Parcours (Optionnel) */}
-        {/*    <div className="mt-20">
-          <h3 className="text-3xl font-bold text-center mb-12">
-            Mon <span className="text-yellow-200">parcours</span>
-          </h3>
-          <div className="max-w-3xl mx-auto space-y-8">
-            {[
-              {
-                year: "2024",
-                title: "Développeur Full Stack Freelance",
-                description:
-                  "Création de solutions web sur mesure pour divers clients internationaux.",
-              },
-              {
-                year: "2022",
-                title: "Développeur Front-end",
-                description:
-                  "Développement d'interfaces utilisateur modernes et responsive pour des startups.",
-              },
-              {
-                year: "2020",
-                title: "Début dans le développement web",
-                description:
-                  "Formation intensive et premiers projets personnels en HTML, CSS, et JavaScript.",
-              },
-            ].map((item, index) => (
-              <div key={index} className="flex gap-6 group">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-yellow-200 text-black flex items-center justify-center font-bold text-sm group-hover:scale-110 transition-transform">
-                    {item.year}
-                  </div>
-                  {index !== 2 && (
-                    <div className="w-0.5 h-full bg-gradient-to-b from-yellow-200 to-transparent mt-2"></div>
-                  )}
-                </div>
-                <div className="flex-1 pb-8">
-                  <h4 className="text-xl font-bold mb-2">{item.title}</h4>
-                  <p className="text-gray-400">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
       </div>
     </section>
   );

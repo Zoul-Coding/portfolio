@@ -114,7 +114,7 @@ const Header = () => {
             alt="Logo"
           />
           <h2 className="text-2xl font-bold text-white group-hover:text-yellow-200 transition-colors">
-            zoul<span className="text-yellow-200">.</span>
+            zoul
           </h2>
         </Link>
 

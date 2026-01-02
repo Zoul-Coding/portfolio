@@ -1,7 +1,6 @@
-import { LucideLinkedin, LucideGithub, Mail, ArrowUp, Heart, Code2 } from "lucide-react";
+import { LucideLinkedin, LucideGithub, Mail, ArrowUp } from "lucide-react";
 import { FaBehance } from "react-icons/fa";
-/* import { Link } from "react-router-dom";
- */
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -27,19 +26,6 @@ const Footer = () => {
       href: "https://www.behance.net/zoulsad",
     },
   ];
-
- /*  const footerLinks = [
-    {
-      title: "Navigation",
-      links: [
-        { name: "Accueil", href: "#home" },
-        { name: "À propos", href: "#about" },
-        { name: "Compétences", href: "#skills" },
-        { name: "Projets", href: "#projects" },
-        { name: "Contact", href: "#contact" },
-      ],
-    },
-  ]; */
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -91,13 +77,9 @@ const Footer = () => {
 
         {/* Copyright et crédits */}
         <div className="border-t border-gray-800 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          <div className="flex justify-center items-center gap-4 text-sm text-gray-500">
             <p className="flex items-center gap-2">
               © {currentYear} Zoulkifirou SABI ADAM. Tous droits réservés.
-            </p>
-            <p className="flex items-center gap-2">
-              Conçu avec <Heart className="w-4 h-4 text-red-500 animate-pulse" /> et{" "}
-              <Code2 className="w-4 h-4 text-yellow-200" />
             </p>
           </div>
         </div>

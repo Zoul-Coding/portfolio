@@ -1,35 +1,6 @@
-/* import { CardSpotlight } from "@/components/ui/card-spotlight-static";
- */ import {
-  ArrowDown,
-  Download,
-  Sparkles /* LucideLinkedin, LucideGithub, Mail */,
-} from "lucide-react";
-/* import { FaBehance } from "react-icons/fa"; */
 import Cv from "../../../public/assets/files/Cv_Zoulkifirou_SABI_ADAM.pdf";
 
 export function HeroSection() {
-  /*  const socialLinks = [
-    {
-      name: "LinkedIn",
-      icon: <LucideLinkedin className="text-yellow-200" size={20} />,
-      href: "https://www.linkedin.com/in/zoulkifirou-sabi-adam-73ab0b296",
-    },
-    {
-      name: "GitHub",
-      icon: <LucideGithub className="text-yellow-200" size={20} />,
-      href: "https://github.com/Zoul-Coding",
-    },
-    {
-      name: "Gmail",
-      icon: <Mail className="text-yellow-200" size={20} />,
-      href: "mailto:zoulkifirousabiadam@gmail.com",
-    },
-    {
-      name: "Behance",
-      icon: <FaBehance className="text-yellow-200" size={20} />,
-      href: "https://www.behance.net/zoulsad",
-    },
-  ]; */
 
   return (
     <section id="home" className="relative overflow-hidden">
@@ -52,7 +23,6 @@ export function HeroSection() {
             {/* Badge animé */}
             <div className="flex justify-center mb-6 animate-fade-in-down">
               <div className="inline-flex items-center gap-2 md:px-4 px-3 py-2 rounded-full bg-yellow-200/10 border border-yellow-200/20 backdrop-blur-sm">
-                <Sparkles className="w-4 h-4 text-yellow-200 animate-pulse" />
                 <span className="text-yellow-200 text-sm font-medium">
                   Disponible pour des missions freelance
                 </span>
@@ -87,7 +57,6 @@ export function HeroSection() {
               >
                 <span className="relative z-10 flex items-center gap-2">
                   Découvrez mes projets
-                  <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-yellow-200 opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </a>
@@ -98,42 +67,10 @@ export function HeroSection() {
                 className="group relative px-12 h-12 font-poppins rounded-xl bg-gray-800 text-yellow-200 font-semibold border border-gray-700 hover:border-yellow-200 transition-all duration-300 flex items-center hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] hover:scale-105"
               >
                 <span className="flex items-center gap-2">
-                  <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
                   Téléchargez mon CV
                 </span>
               </a>
             </div>
-
-            {/* Social links animés */}
-            {/*  <div className="flex flex-wrap justify-center gap-3 pt-10 animate-fade-in opacity-0 animation-delay-600">
-                {socialLinks.map((social, index) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group bg-secondary hover:bg-gray-700 flex items-center justify-center gap-2 px-4 h-10 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(250,204,21,0.2)] border border-transparent hover:border-yellow-200/30"
-                    style={{ 
-                      animation: 'fade-in 0.8s ease-out forwards',
-                      animationDelay: `${600 + index * 100}ms`,
-                      opacity: 0
-                    }}
-                  >
-                    <span className="group-hover:scale-110 transition-transform">
-                      {social.icon}
-                    </span>
-                    <p className="text-sm font-poppins text-white">{social.name}</p>
-                  </a>
-                ))}
-              </div>
-            */}
-            {/* Scroll indicator animé */}
-            {/* <div className="hidden md:flex justify-center pt-12 animate-bounce">
-              <div className="flex flex-col items-center justify-center gap-2 text-gray-400">
-                <span className="text-sm">Scroll down</span>
-                <ArrowDown className="w-5 h-5" />
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

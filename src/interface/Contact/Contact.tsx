@@ -4,15 +4,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
 import emailjs from "@emailjs/browser";
-import {
-  Mail,
-  User,
-  MessageSquare,
-  Send,
-  MapPin,
-/*   Phone,
- */  Clock,
-} from "lucide-react";
 
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -107,27 +98,6 @@ const Contact = () => {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: <Mail className="w-6 h-6" />,
-      title: "Email",
-      value: "zoulkifirousabiadam@gmail.com",
-      link: "mailto:zoulkifirousabiadam@gmail.com",
-    },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: "Localisation",
-      value: "Cotonou, Bénin",
-      link: null,
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Disponibilité",
-      value: "Lun - Ven, 9h - 18h",
-      link: null,
-    },
-  ];
-
   return (
     <section
       id="contact"
@@ -139,7 +109,7 @@ const Contact = () => {
         <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-yellow-200/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="lg:max-w-screen-xl mx-auto xl:px-0 px-5 relative z-10">
+      <div className="lg:max-w-screen-lg mx-auto xl:px-0 px-5 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="md:text-5xl text-4xl font-bold mb-4">
@@ -150,56 +120,10 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-5 grid-cols-1 gap-12">
-          {/* Informations de contact */}
-          <div className="lg:col-span-2 space-y-6 animate-fade-in opacity-0 animation-delay-200">
-            <div className="w-full bg-secondary rounded-2xl p-8 border border-gray-800">
-              <h3 className="text-2xl font-bold mb-6">
-                Informations de contact
-              </h3>
-
-              <div className="space-y-6">
-                {contactInfo.map((info, index) => (
-                  <div
-                    key={index}
-                    className="group flex items-start gap-4 p-4 rounded-xl hover:bg-gray-800/50 transition-all duration-300"
-                  >
-                    <div className="text-yellow-200 group-hover:scale-110 transition-transform">
-                      {info.icon}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm text-gray-400 mb-1">{info.title}</p>
-                      {info.link ? (
-                        <a
-                          href={info.link}
-                          className="block break-words text-white hover:text-yellow-200 transition-colors font-medium"
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <p className="text-white font-medium">{info.value}</p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Card avec CTA */}
-            {/*  <div className="bg-gradient-to-br from-yellow-200/10 to-transparent rounded-2xl p-8 border border-yellow-200/20">
-              <h3 className="text-xl font-bold mb-3">Vous préférez un appel ?</h3>
-              <p className="text-gray-400 mb-6">
-                Planifions un appel pour discuter de votre projet en détail.
-              </p>
-              <Button className="w-full bg-yellow-200 text-black hover:bg-yellow-300 font-semibold">
-                <Phone className="mr-2 w-4 h-4" />
-                Programmer un appel
-              </Button>
-            </div> */}
-          </div>
+        <div className="">
 
           {/* Formulaire */}
-          <div className="lg:col-span-3 animate-fade-in opacity-0 animation-delay-400">
+          <div className="animate-fade-in opacity-0 animation-delay-400">
             <div className="bg-secondary rounded-2xl p-8 border border-gray-800 shadow-2xl">
               <Form {...form}>
                 <form
@@ -214,7 +138,6 @@ const Contact = () => {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-white flex items-center gap-2">
-                            <User className="w-4 h-4 text-yellow-200" />
                             Nom
                           </FormLabel>
                           <FormControl>
@@ -235,7 +158,6 @@ const Contact = () => {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel className="text-white flex items-center gap-2">
-                            <User className="w-4 h-4 text-yellow-200" />
                             Prénom
                           </FormLabel>
                           <FormControl>
@@ -258,7 +180,6 @@ const Contact = () => {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-white flex items-center gap-2">
-                          <Mail className="w-4 h-4 text-yellow-200" />
                           Sujet
                         </FormLabel>
                         <FormControl>
@@ -280,7 +201,6 @@ const Contact = () => {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel className="text-white flex items-center gap-2">
-                          <MessageSquare className="w-4 h-4 text-yellow-200" />
                           Message
                         </FormLabel>
                         <FormControl>
@@ -313,7 +233,6 @@ const Contact = () => {
                       </>
                     ) : (
                       <>
-                        <Send className="mr-2 w-4 h-4" />
                         Envoyer le message
                       </>
                     )}
@@ -323,16 +242,6 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
-        {/* Section FAQ ou info supplémentaire */}
-        {/* <div className="mt-16 text-center animate-fade-in opacity-0 animation-delay-600">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-secondary rounded-full border border-gray-800">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm text-gray-400">
-              Disponible pour de nouveaux projets
-            </span>
-          </div>
-        </div> */}
       </div>
     </section>
   );
