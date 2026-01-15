@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./interface/Header/Header";
 import { HeroSection } from "./interface/HeroSection/HeroSection";
 import Projects from "./interface/Projects/Projects";
-import Skills from "./interface/Skills/Skills";
 import Contact from "./interface/Contact/Contact";
 import ProjectDetail from "./interface/Projects/ProjectDetail";
 import Footer from "./interface/Footer/Footer";
@@ -17,7 +16,6 @@ const HomePage = () => {
       <Header />
       <HeroSection />
       <About />
-      <Skills />
       <Projects />
       <Contact />
       <Footer />

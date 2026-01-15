@@ -65,7 +65,7 @@ const Header = () => {
   const navLinks = [
     { name: "Accueil", href: "#home" },
     { name: "À propos", href: "#about" },
-    { name: "Compétences", href: "#skills" },
+   /*  { name: "Compétences", href: "#skills" }, */
     { name: "Projets", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
@@ -95,9 +95,9 @@ const Header = () => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed w-full z-50 ${
         isScrolled
-          ? "backdrop-blur-md bg-background/80 shadow-lg border-b border-gray-800"
+          ? "backdrop-blur-md bg-background/80 shadow-lg border-b border-gray-900"
           : "bg-transparent"
       }`}
     >
@@ -144,13 +144,6 @@ const Header = () => {
               </a>
             );
           })}
-
-          {/* Bouton CTA */}
-          <a href="#contact">
-            <button className="bg-yellow-200 text-black px-6 py-2 rounded-xl font-semibold hover:bg-yellow-300 transition-all duration-300 hover:shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:scale-105">
-              Discutons
-            </button>
-          </a>
         </div>
 
         {/* Burger Menu Mobile */}

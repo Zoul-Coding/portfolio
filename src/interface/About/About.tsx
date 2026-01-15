@@ -1,7 +1,31 @@
 import React from "react";
-import { Code, Palette, Rocket, Users, Award } from "lucide-react";
+import {
+  Code,
+  Palette,
+  Rocket,
+  Users,
+  Award,
+  Code2,
+  Wrench,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Profile from "../../../public/assets/img/profile_full.webp";
+import {
+  Marquee,
+  MarqueeContent,
+  MarqueeFade,
+  MarqueeItem,
+} from "@/components/ui/shadcn-io/marquee";
+import ReactImg from "../../../public/assets/img/react.svg";
+import TailwindImg from "../../../public/assets/img/tailwind-css.svg";
+import TypeScriptImg from "../../../public/assets/img/typescript.svg";
+import GitImg from "../../../public/assets/img/Skills/git.png";
+import GitHubImg from "../../../public/assets/img/Skills/github.svg";
+import NextJsImg from "../../../public/assets/img/Skills/next-js.svg";
+import AngularImg from "../../../public/assets/img/Skills/angular.png";
+import FigmaImg from "../../../public/assets/img/Skills/figma.png";
+import ApiImg from "../../../public/assets/img/Skills/api.svg";
+import CV from "../../../public/assets/files/Cv_Zoulkifirou_SABI_ADAM.pdf";
 
 const About = () => {
   const values = [
@@ -31,10 +55,46 @@ const About = () => {
     },
   ];
 
+  const skillCategories = {
+    frontend: {
+      title: "Front-End",
+      icon: <Code2 className="w-6 h-6" />,
+      color: "text-blue-400",
+      skills: [
+        { name: "React", img: ReactImg },
+        { name: "Next.js", img: NextJsImg },
+        { name: "TypeScript", img: TypeScriptImg },
+        { name: "Angular", img: AngularImg },
+      ],
+    },
+    design: {
+      title: "Design",
+      icon: <Palette className="w-6 h-6" />,
+      color: "text-purple-400",
+      skills: [
+        { name: "Tailwind CSS", img: TailwindImg },
+        { name: "Figma", img: FigmaImg },
+      ],
+    },
+    tools: {
+      title: "Outils",
+      icon: <Wrench className="w-6 h-6" />,
+      color: "text-orange-400",
+      skills: [
+        { name: "Git", img: GitImg },
+        { name: "GitHub", img: GitHubImg },
+        { name: "API REST", img: ApiImg },
+      ],
+    },
+  };
+
+  // Toutes les compétences pour le marquee
+  const allSkills = Object.values(skillCategories).flatMap((cat) => cat.skills);
+
   return (
     <section
       id="about"
-      className="scroll-mt-20 py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20"
+      className="scroll-mt-20 py-16 md:py-24"
     >
       <div className="max-w-screen-xl mx-auto xl:px-0 px-5">
         {/* Header */}
@@ -122,7 +182,7 @@ const About = () => {
 
               <p>
                 Curieux et en apprentissage continu, je combine{" "}
-                <span className="text-yellow-200 font-semibold">technique</span>
+                <span className="text-yellow-200 font-semibold">technique</span> {" "}
                 et <span className="text-yellow-200 font-semibold">
                   design
                 </span>{" "}
@@ -138,18 +198,48 @@ const About = () => {
                   Contactez-moi
                 </Button>
               </a>
-              <a href="/cv.pdf" download>
+              <a href={CV} download>
                 <Button
                   variant="outline"
                   className="border-gray-700 hover:bg-secondary px-6 h-12 text-base font-medium rounded-xl"
                 >
-                 {/*  <BookOpen className="mr-2 w-5 h-5" /> */}
+                  {/*  <BookOpen className="mr-2 w-5 h-5" /> */}
                   Télécharger mon CV
                 </Button>
               </a>
             </div>
           </div>
         </div>
+
+          {/* Marquee des compétences */}
+      <div className="relative">
+        <Marquee className="mb-20">
+          <MarqueeFade side="left" />
+          <MarqueeFade side="right" />
+          <MarqueeContent>
+            {allSkills.map((skill, index) => (
+              <MarqueeItem
+                className="flex flex-col items-center justify-center mx-6"
+                key={index}
+              >
+                <div className="group relative">
+                  <div className="absolute inset-0 bg-yellow-200/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="relative bg-secondary rounded-2xl p-6 border border-gray-800 group-hover:border-yellow-200/50 transition-all duration-300 w-32 h-32 flex flex-col items-center justify-center">
+                    <img
+                      alt={skill.name}
+                      className="w-16 h-16 object-contain mb-2 group-hover:scale-110 transition-transform"
+                      src={skill.img}
+                    />
+                    <p className="text-white text-center font-medium text-sm">
+                      {skill.name}
+                    </p>
+                  </div>
+                </div>
+              </MarqueeItem>
+            ))}
+          </MarqueeContent>
+        </Marquee>
+      </div>
 
         {/* Valeurs et approche */}
         <div>

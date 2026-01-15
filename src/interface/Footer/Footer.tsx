@@ -32,12 +32,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-background to-secondary/20 relative overflow-hidden">
-      {/* Particules d'arrière-plan */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-50">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-200/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-yellow-200/5 rounded-full blur-3xl"></div>
-      </div>
+    <footer className="relative">
 
       <div className="max-w-screen-xl mx-auto xl:px-0 px-5 relative z-10">
 

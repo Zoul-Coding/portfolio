@@ -7,6 +7,7 @@ export const projectsData = [
     fullDescription:
       "Annuaire du Royaume est une plateforme moderne permettant aux utilisateurs de rechercher rapidement des entreprises et des services grâce à un moteur de recherche performant, des catégories bien structurées et des fiches détaillées. J’ai contribué au développement front-end en optimisant l’expérience utilisateur, la structure des pages, la navigation et la gestion dynamique des données.",
     image: "/assets/img/Project/project-1.webp",
+    imageDetail: "/assets/img/Project/laptop.webp",
     images: [
       "/assets/img/Project/project-2.webp",
       "/assets/img/Project/project-3.webp",

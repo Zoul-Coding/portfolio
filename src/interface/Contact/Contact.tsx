@@ -98,16 +98,11 @@ const Contact = () => {
     }
   };
 
-  return (
+return (
     <section
       id="contact"
-      className="scroll-mt-20 py-16 md:py-24 bg-gradient-to-b from-background via-secondary/10 to-background relative overflow-hidden"
+      className="scroll-mt-20 py-16 md:py-24 relative"
     >
-      {/* Particules d'arrière-plan */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-yellow-200/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-yellow-200/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
 
       <div className="lg:max-w-screen-lg mx-auto xl:px-0 px-5 relative z-10">
         {/* Header */}
