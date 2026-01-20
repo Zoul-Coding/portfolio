@@ -60,7 +60,7 @@ const ProjectDetail = () => {
       </div>
 
       {/* Contenu principal */}
-      <div className="max-w-screen-xl mx-auto xl:px-0 px-5 md:pb-6 md:pt-6">
+      <div className="max-w-screen-xl mx-auto xl:px-0 px-5">
         <div className="lg:grid grid-cols-7 items-center gap-8">
           {/* Image principale */}
           <div className="mb-12 lg:col-span-4">

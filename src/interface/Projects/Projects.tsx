@@ -61,7 +61,7 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full md:h-56 h-72 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full md:h-full h-72 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
                     <div className="bg-yellow-200 text-black px-6 py-3 rounded-full font-semibold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -75,7 +75,7 @@ const Projects = () => {
                   <div className="relative z-10 flex-1 flex flex-col">
                     <CardHeader className="pt-4 pb-0">
                       <Link to={`/project/${project.id}`}>
-                        <CardTitle className="text-2xl font-bold mb-3 hover:text-yellow-200 transition-colors">
+                        <CardTitle className="text-2xl font-bold mb-3 hover:text-yellow-200 transition-colors line-clamp-2">
                           {project.title}
                         </CardTitle>
                       </Link>
@@ -111,7 +111,7 @@ const Projects = () => {
                     </CardContent>
 
                     {/* Footer avec liens */}
-                    <CardFooter className="pt-0 pb-6 flex flex-col gap-4 mt-auto">
+                    <CardFooter className=" flex flex-col gap-4">
                       {/* Liens GitHub et Live */}
                       {(project.githubLink || project.liveLink) && (
                         <div className="flex items-center gap-4 text-sm">
