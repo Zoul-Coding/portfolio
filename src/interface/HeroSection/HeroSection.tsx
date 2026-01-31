@@ -3,18 +3,6 @@ import { CardSpotlight } from "@/components/ui/card-spotlight-static";
 export function HeroSection() {
   return (
     <section id="home" className="relative overflow-hidden">
-      {/* Background gradient animé */}
-      {/*  <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/10 to-background">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-200/10 via-transparent to-transparent"></div>
-      </div> */}
-
-      {/* Particules flottantes */}
-      {/* <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-yellow-200/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-200/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4 w-80 h-80 bg-yellow-200/10 rounded-full blur-3xl animate-pulse delay-500"></div>{" "}
-      </div>
- */}
       <CardSpotlight className="flex items-center justify-center w-full md:h-[116vh] h-[100vh] relative">
         <div className="max-w-screen-lg mx-auto px-3">
           <div className="flex flex-col justify-center h-screen items-center ">

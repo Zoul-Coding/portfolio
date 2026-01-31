@@ -36,7 +36,7 @@ export const CardSpotlight = ({
       {...props}
     >
       <motion.div
-        className="pointer-events-none absolute inset-px rounded-md opacity-100 w-full h-full"
+        className="pointer-events-none absolute inset-px rounded-md opacity-100"
         style={{
           backgroundColor: color,
           maskImage: useMotionTemplate`
