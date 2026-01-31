@@ -1,4 +1,4 @@
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { projectsData } from "../../data/ProjectData";
 import { FaReact } from "react-icons/fa";
