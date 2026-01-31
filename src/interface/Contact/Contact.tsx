@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -66,17 +67,11 @@ const Contact = () => {
       emailjs.init(EMAILJS_PUBLIC_KEY);
 
       // Envoyer l'email
-      const response = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: `${data.name} ${data.surname}`,
-          subject: data.subject,
-          message: data.message,
-        }
-      );
-
-      console.log("SUCCESS!", response.status, response.text);
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name: `${data.name} ${data.surname}`,
+        subject: data.subject,
+        message: data.message,
+      });
 
       // Toast de succès
       toast.success("Message envoyé avec succès ! 🎉", {
@@ -98,27 +93,41 @@ const Contact = () => {
     }
   };
 
-return (
-    <section
-      id="contact"
-      className="scroll-mt-20 py-16 md:py-24 relative"
-    >
-
+  return (
+    <section id="contact" className="scroll-mt-20 py-16 md:py-24 relative">
       <div className="lg:max-w-screen-lg mx-auto xl:px-0 px-5 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <h2 className="md:text-5xl text-4xl font-bold mb-4">
-            Contactez-<span className="text-yellow-200">moi</span>
-          </h2>
-          <p className="text-muted-foreground font-normal md:text-2xl text-xl leading-relaxed max-w-2xl mx-auto">
-            Une question ? Un projet ? N'hésitez pas à me contacter
-          </p>
+          <motion.h2
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="md:text-5xl text-4xl font-bold mb-4"
+          >
+            Discutons de <span className="text-yellow-200">votre projet</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-muted-foreground font-normal md:text-2xl text-xl leading-relaxed max-w-2xl mx-auto"
+          >
+            Vous avez une idée, un projet ou une collaboration en tête ? Je
+            serais ravi d’échanger avec vous et de voir comment je peux vous
+            aider.
+          </motion.p>
         </div>
 
         <div className="">
-
           {/* Formulaire */}
-          <div className="animate-fade-in opacity-0 animation-delay-400">
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             <div className="bg-secondary rounded-2xl p-8 border border-gray-800 shadow-2xl">
               <Form {...form}>
                 <form
@@ -227,15 +236,13 @@ return (
                         Envoi en cours...
                       </>
                     ) : (
-                      <>
-                        Envoyer le message
-                      </>
+                      <>Envoyer le message</>
                     )}
                   </Button>
                 </form>
               </Form>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
